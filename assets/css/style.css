@@ -1,0 +1,22 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+#jumbotron {
+	background-image: url("../images/cityscapeb.png");
+	color: white;
+	height: 250px;
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #0066CC;
+    color: white;
+
+}
+
+.btn {
+    background-color: #0066CC;
+    color: white;
+
+}
