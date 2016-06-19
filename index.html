@@ -23,19 +23,15 @@
 <br>
 <h2 class="text-center">Metropolitan Transit Authority</h2>
 <h4 class="text-center">Train Scheduling System</h4>
-
 </div>
-
 <div class="container">
-
-    <div class="row">
+	<div class="row">
     	<div class="col=lg-12">
 	
 	<div class="panel panel-default">
     		<div class="panel-heading">
     			<h3 class="panel-title">Current Train Schedule</h3>
     		</div>	
-	
 	<table id="info" class="table">	
 		<tr>
 		<th scope="col">Train Name</th>
@@ -46,9 +42,7 @@
 		</tr>
     </table>
     </div>
-
-
-    		<div class="panel panel-default">
+		<div class="panel panel-default">
     			<div class="panel-heading">
     				<h3 class="panel-title">Add Train</h3>
     			</div>
@@ -76,12 +70,7 @@
     		</div>
     	</div>	
     </div>	
-
 </div>
-
-
-
-
 
 <script> 
 
@@ -122,24 +111,12 @@ dataRef.on("child_added", function(childSnapshot, prevChildKey) {
 	var destination = childSnapshot.val().destination;
 	var first = childSnapshot.val().first;
 	var frequency = childSnapshot.val().frequency;
-
 	var firstTimeConverted = moment(first, "hh:mm").subtract(1, "years");
-	console.log(firstTimeConverted);
-
 	var currentTime = moment();
-	console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-
 	var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-	console.log("DIFFERENCE IN TIME: " + diffTime);
-
 	var tRemainder = diffTime % frequency;
-	console.log(tRemainder);
-
 	var tMinutesTillTrain = frequency - tRemainder;
-	console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-
 	var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm a"));
 	var timeArrival = moment(nextTrain).format("hh:mm a");
 
 	var tableRow = $("<tr>");
@@ -162,7 +139,6 @@ dataRef.on("child_added", function(childSnapshot, prevChildKey) {
 
 })
 
-
-</script>
+	</script>
 </body>
 </html>
